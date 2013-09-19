@@ -30,7 +30,7 @@ echo $glosbe->translate('hello');
 
 ###Processed translations
 Process the raw API answer and get only an array of possible translations (authors, meanings and all other data are removed). 
-(**Warning:** This method only works if 'format' was set to 'json' (default behaviour) when 'translate' method was invoked. )
+( **Warning:** This method only works if 'format' was set to 'json' (default behaviour) when 'translate' method was invoked. )
 
 ```php 
 $glosbe->translate('hello');

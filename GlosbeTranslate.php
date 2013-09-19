@@ -143,7 +143,8 @@ class GlosbeTranslate {
      * @return string Translated text
      */
     public function translate($string) {
-        $url = self::baseURL . "/translate?from={$this->langFrom}&dest={$this->langTo}&phrase={$string}&format={$this->format}";
+        $eString = urlencode($string);
+        $url = self::baseURL . "/translate?from={$this->langFrom}&dest={$this->langTo}&phrase={$eString}&format={$this->format}";
         if ($this->memorySearch) $url .= "&tm=true";
         if ($this->pretty) $url .= "&pretty=true";
         

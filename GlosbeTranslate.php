@@ -160,9 +160,11 @@ class GlosbeTranslate {
         $data = json_decode($this->lastResult);
         if (!$data) throw new Exception("This method only supports API answers in json. Set 'json' format and call 'trasnlate' method again, before calling 'translationsOnly'");
         $results = array();
-        foreach ($data->tuc as $trans) {
-            if (isset($trans->phrase))
-                $results[] = $trans->phrase->text;
+        if (isset($data->tuc)) {
+                foreach ($data->tuc as $trans) {
+                    if (isset($trans->phrase))
+                        $results[] = $trans->phrase->text;
+                }
         }
         return $results;
     }

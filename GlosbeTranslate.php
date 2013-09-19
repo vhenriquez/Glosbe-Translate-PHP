@@ -151,14 +151,19 @@ class GlosbeTranslate {
         return $this->lastResult;
     }
 
-    public static function convertLang($lang) {
-        $langs = array(
-            Exercise::LANG_ENGLISH => "eng",
-            Exercise::LANG_SPANISH => "spa",
-            Exercise::LANG_INDONESIAN => "ind",
-        );
-
-        return $langs[$lang];
+    /**
+     * Process the raw API answer and extract the traslations
+     * 
+     * @return array
+     */
+    public function translationsOnly() {
+        $data = json_decode($this->lastResult);
+        if (!$data) throw new Exception("This method only supports API answers in json. Set 'json' format and call 'trasnlate' method again, before calling 'translationsOnly'");
+        $results = array();
+        foreach ($data->tuc as $trans) {
+            if (isset($trans->phrase))
+                $results[] = $trans->phrase->text;
+        }
+        return $results;
     }
-
 }

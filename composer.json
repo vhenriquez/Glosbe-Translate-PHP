@@ -15,6 +15,6 @@
   ],
   "minimum-stability": "dev",
   "require": {
-
+    "lib-curl": "*"
   }
 }

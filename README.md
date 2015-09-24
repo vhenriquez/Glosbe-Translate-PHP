@@ -8,7 +8,7 @@ PHP Class to translate from any language to any language using the free Glosbe A
 ###Instantiate 
 Run composer install
 
-Instantiate GoogleTranslate object
+Instantiate GlosbeTranslate object
 
 ```php
 $glosbe = new \Translate\GlosbeTranslate("ita", "de");

@@ -6,16 +6,18 @@ PHP Class to translate from any language to any language using the free Glosbe A
 ##Basic Usage
 
 ###Instantiate 
+Run composer install
+
 Instantiate GoogleTranslate object
 
 ```php
-$glosbe = new GlosbeTranslate("eng", "ind"); 
+$glosbe = new \Translate\GlosbeTranslate("ita", "de");
 ```
 
 or 
 
 ```php
-$glosbe = new GlosbeTranslate(); 
+$glosbe = new \Translate\GlosbeTranslate();
 $glosbe->setLangFrom("eng");
 $glosbe->setLangTo("ind");
 ```
